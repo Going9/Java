@@ -6,10 +6,11 @@ public class Person {
 	int age;
 	
 	public Person()
-	{
+	{	
 		this("no name", 1);
+		
 	}
-	// 여기서 this로 먼저 생성자 호출해야 인스턴스 완성 따라서 this 이전에 직접 이름과 나이 입력하면 안된다 ?? 모르겟서;
+	// 여기서 this로 먼저 생성자 호출해야 인스턴스 완성, 따라서 this 이전에 직접 이름과 나이 입력하면 안된다 ?? 모르겟서;
 	
 	public Person(String name, int age) {
 		
@@ -22,10 +23,20 @@ public class Person {
 		System.out.println(name + "," + age);
 	}
 	
+	public Person getPerson() {
+		return this;
+	}
+	
 	public static void main(String[] args) {
 		
 		Person person = new Person();
 		person.showPerson();
+		
+		System.out.println(person);
+		
+		Person person2 = person.getPerson();
+		
+		System.out.println(person2);
 		
 	}
 }
